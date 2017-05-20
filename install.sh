@@ -137,7 +137,6 @@ case "$1" in
       inst_packer
       inst_vbox
       inst_vagrant
-      inst_remmina
       ;;
       user)
       check_deps
@@ -147,12 +146,33 @@ case "$1" in
       inst_remmina
       inst_nhsbuntu_tweaks
 			;;
+      packer)
+      check_deps
+      set_versions
+      inst_packer
+      ;;
+      vbox)
+      check_deps
+      set_versions
+      inst_vbox
+      ;;
+      vagrant)
+      check_deps
+      set_versions
+      inst_vagrant
+      ;;
+      remmina)
+      check_deps
+      set_versions
+      inst_remmina
+      inst_nhsbuntu_tweaks
+      ;;
       info)
       set_versions
       print_versions
       ;;
-       *)
-      echo "Usage: $0 {developer|user|info}"
+      *)
+      echo "Usage: $0 {developer|user|packer|vbox|vagrant|remmina|info}"
 esac
 
 exit 0
